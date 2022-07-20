@@ -55,12 +55,13 @@ def index(request):
         if request.POST.get("signup")=="signup":
             userregi(request)
             if request.session.get('userrole')=='student':
+                
                 return redirect('student_home')
             if request.session.get('userrole')=='staff':
                 return redirect('staff_home')
             if request.session.get('userrole')=='hod':
                 return redirect('hod_home')
-            
+        
             
         elif request.POST.get("login")=="login":
             userlogin(request)
